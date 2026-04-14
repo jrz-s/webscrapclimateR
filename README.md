@@ -1,0 +1,95 @@
+climateR
+================
+
+# climateR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+An R package for retrieving monthly climatological data from the
+Climatempo platform using automated web scraping. The package provides
+flexible tools to search locations and extract structured climate data
+for ecological, environmental, and data science applications.
+
+------------------------------------------------------------------------
+
+## Installation
+
+You can install the development version of **climateR** from GitHub:
+
+``` r
+# Install development version from GitHub
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
+}
+
+remotes::install_github("jrz-s/climateR")
+```
+
+## Overview
+
+**climateR** enables users to:
+
+- Search for locations using flexible input (region, state, or city)
+- Retrieve monthly climatological data (temperature and precipitation)
+- Handle partial, case-insensitive, and accent-insensitive queries
+- Aggregate data across multiple locations
+
+## Example
+
+``` r
+library(climateR)
+
+# Retrieve climate data for Aracaju (Sergipe, Brazil)
+climate_data(state = "se", city = "aracaju")
+```
+
+## Input flexibility
+
+The package supports robust matching of user inputs:
+
+- Partial names (e.g., “arac” → “aracaju”)
+- Case-insensitive matching (e.g., “Sergipe” = “sergipe”)
+- Accent-insensitive matching (e.g., “São” = “Sao”)
+- Informative error messages for ambiguous inputs
+
+## Workflow
+
+A typical workflow consists of:
+
+1.  Searching locations using `search_locations()`
+2.  Retrieving climate data using `climate_data()`
+3.  Performing downstream analysis or visualization
+
+## Output
+
+The main function returns a tidy tibble with the following variables:
+
+`region:` Geographic region `state:` State abbreviation `city_name:`
+City name `site:` Site identifier (optional) `month:` Month (1–12)
+`tmin:` Minimum temperature (°C) `tmax:` Maximum temperature (°C)
+`precip:` Precipitation (mm)
+
+## Disclaimer
+
+This package performs automated web scraping from the Climatempo
+website.
+
+Users should:
+
+- Avoid excessive or high-frequency requests
+- Respect the terms of service of the data provider
+- Use appropriate delays between requests
+
+The authors are not affiliated with Climatempo.
+
+## Author
+
+Developed by Jhonatan Rafael Zárate-Salazar, PhD Postdoctoral
+researcher, Graduate Program in Ecology and Conservation Federal
+University of Sergipe, São Cristóvão, Sergipe, Brazil
+
+## Collaborators
+
+Sidney Feitosa Gouveia, PhD Professor, Department of Ecology Federal
+University of Sergipe, São Cristóvão, Sergipe, Brazil
