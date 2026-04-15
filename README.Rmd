@@ -3,8 +3,6 @@ title: "webscrapclimateR"
 output: github_document
 ---
 
-# climateR
-
 <!-- badges: start -->
 <!-- badges: end -->
 

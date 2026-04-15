@@ -1,8 +1,6 @@
 webscrapclimateR
 ================
 
-# climateR
-
 <!-- badges: start -->
 <!-- badges: end -->
 
