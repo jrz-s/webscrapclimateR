@@ -19,16 +19,14 @@ match_state <- function(state) {
   
   state_clean <- utils_normalize_text(state)
   
-  matches <- valid_states[valid_states == state_clean]
-  
-  if (length(matches) == 0) {
+  if (!state_clean %in% valid_states) {
     rlang::abort(
       paste0(
-        "No state found for: ", state,
-        ". Please provide a valid Brazilian state abbreviation (e.g., 'se', 'sp')."
+        "No state found for: '", state, "'. ",
+        "Please provide a valid Brazilian state abbreviation (e.g., 'se', 'sp')."
       )
     )
   }
   
-  return(matches)
+  return(state_clean)
 }
