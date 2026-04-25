@@ -17,7 +17,6 @@ Imports:
     stringi,
     purrr,
     rvest,
-    tibble,
     magrittr,
     rlang
 LazyData: true
