@@ -38,7 +38,7 @@ match_state <- function(state_input) {
 
     candidates <- state_table$state_abbr[idx_partial]
 
-    # -------- DECISÃO --------
+    # -------- DECISAO --------
 
     if (length(candidates) == 1 && nchar(x) > 2) {
       return(candidates)
@@ -54,8 +54,13 @@ match_state <- function(state_input) {
       )
     }
 
-    # -------- 4. NÃO ENCONTRADO --------
-    stop(paste0("No state found for: ", x))
+    # -------- 4. NAO ENCONTRADO --------
+    rlang::abort(
+      message = paste0(
+        "Invalid state: '", state, "'. ",
+        "Please provide a valid Brazilian state abbreviation (e.g., 'se', 'sp')."
+      )
+    )
   })
 
   unique(unlist(matches))

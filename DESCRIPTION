@@ -18,5 +18,6 @@ Imports:
     purrr,
     rvest,
     tibble,
-    magrittr
+    magrittr,
+    rlang
 LazyData: true

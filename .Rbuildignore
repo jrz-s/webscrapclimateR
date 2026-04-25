@@ -1,6 +1,6 @@
-^climateR\.Rproj$
+^climabr\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^README\.html$
 ^LICENSE\.md$
-usethis::use_build_ignore("webscrapclimateR.Rproj")
+usethis::use_build_ignore("climabr.Rproj")

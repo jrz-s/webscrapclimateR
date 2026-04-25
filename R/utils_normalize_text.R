@@ -9,6 +9,7 @@
 #' @importFrom stringr str_detect str_remove str_to_lower str_sub
 #' @importFrom purrr map map_dfr compact
 #' @importFrom magrittr %>%
+#' @importFrom rlang abort
 utils_normalize_text <- function(x) {
   x %>%
     stringr::str_to_lower() %>%

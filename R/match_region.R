@@ -40,7 +40,7 @@ match_region <- function(region_input) {
 
     candidates <- unique(region_table$region_full[idx_partial])
 
-    # -------- DECISÃO --------
+    # -------- DECISAO --------
 
     if (length(candidates) == 1) {
       return(candidates)
@@ -56,8 +56,13 @@ match_region <- function(region_input) {
       )
     }
 
-    # -------- NÃO ENCONTRADO --------
-    stop(paste0("No region found for: ", x))
+    # -------- NAO ENCONTRADO --------
+    rlang::abort(
+      message = paste0(
+        "Invalid region: '", region, "'. ",
+        "Please provide a valid Brazilian region (e.g., 'norte', 'sudeste')."
+      )
+    )
   })
 
   unique(unlist(matches))
